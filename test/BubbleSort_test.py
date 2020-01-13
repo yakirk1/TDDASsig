@@ -76,7 +76,7 @@ class BubbleSort_test(unittest.TestCase):
         result3 = BubbleSort.sort(arr3)
 
         # expect/assert
-        self.assertRaises(expected, result1)
+        self.assertEquals('Invalid Input', result1)
         self.assertRaises(expected, result2)
         self.assertRaises(expected, result3)
 
