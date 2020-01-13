@@ -4,6 +4,32 @@ from src.Bmi import BMI
 
 
 class Bmi_test(unittest.TestCase):
+    def test_correct_output(self):
+        # stub
+        height1 = 100
+        mass1 = 50
+
+        height2 = 180
+        mass2 = 75
+
+        height3 = 190
+        mass3 = 95
+
+
+        # assume
+        expected1 = 50
+        expected2 = 23.148148148148145
+        expected3 = 26.315789473684212
+
+        # action
+        result1 = BMI.bmi_calc(height1, mass1)
+        result2 = BMI.bmi_calc(height2, mass2)
+        result3 = BMI.bmi_calc(height3, mass3)
+
+        # expect/assert
+        self.assertEqual(result1, expected1)
+        self.assertEqual(result2, expected2)
+        self.assertEqual(result3, expected3)
     def test_invalid_type(self):
         # stub
         height1 = 'a'
@@ -15,26 +41,21 @@ class Bmi_test(unittest.TestCase):
         height3 = "95"
         mass3 = True
 
-        height4 = 100
-        mass4 = 50
 
         # assume
         expected1 = "Invalid characters,please type only numerical characters"
         expected2 = "Invalid characters,please type only numerical characters"
         expected3 = "Invalid characters,please type only numerical characters"
-        expected4 = 50
 
         # action
         result1 = BMI.bmi_calc(height1, mass1)
         result2 = BMI.bmi_calc(height2, mass2)
         result3 = BMI.bmi_calc(height3, mass3)
-        result4 = BMI.bmi_calc(height4, mass4)
 
         # expect/assert
         self.assertEqual(result1, expected1)
         self.assertEqual(result2, expected2)
         self.assertEqual(result3, expected3)
-        self.assertEqual(result4, expected4)
 
     def test_divided_by_zero(self):
         # stub
