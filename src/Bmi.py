@@ -16,4 +16,13 @@ class BMI:
         return mass / (height * height)
 
     def bmi_check(bmi):
-        pass
+        if not isinstance(bmi, (int, float)):
+            return "Invalid Input"
+        if bmi <= 0:
+            return "Invalid bmi"
+        if bmi < 18.5:
+            return "Under weight"
+        elif bmi <= 25:
+            return "Valid mass"
+        else:
+            return "Obese"
